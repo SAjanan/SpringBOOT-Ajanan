@@ -1,0 +1,58 @@
+package com.example.jpa.model;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "posts")
+public class Post extends AuditModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
+    @Size(max = 100)
+    @Column(unique = true)
+    private String title;
+
+    @NotNull
+    @Size(max = 250)
+    private String description;
+
+    @NotNull
+    @Lob
+    private String content;
+
+	public Object getTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setTitle(Object title2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getContent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setDescription(Object description2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setContent(Object content2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+    // Getters and Setters (Omitted for brevity)
+}
